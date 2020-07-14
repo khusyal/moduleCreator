@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="LR_Adminhtml::admin">
+                <resource id="LR_Course::course" title="Course" sortOrder="40">
+                    <resource id="LR_Course::manage" title="Course Module" sortOrder="10">
+						<resource id="LR_Course::save" title="Save Course" sortOrder="10" />
+                        <resource id="LR_Course::news_delete" title="Delete Course" sortOrder="20" />
+					</resource>
+                </resource>
+                <resource id="LR_Adminhtml::stores">
+                    <resource id="LR_Adminhtml::stores_settings">
+                        <resource id="LR_Adminhtml::config">
+                            <resource id="LR_Course::config_course" title="Course Section" sortOrder="50" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

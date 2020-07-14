@@ -1,0 +1,26 @@
+<?php $_course = $this->getCollection(); ?>
+<?php if ($_course->getSize()): ?>
+<div class="course_list_view">
+    <?php foreach ($_course as $courseItem): ?>
+        <div id="item_<?php echo $courseItem->getId() ?>" class="course_list_item">
+            <h2>
+                <a href="<?php echo $this->getItemUrl($courseItem) ?>">
+                    <?php echo $this->escapeHtml($courseItem->getTitle()) ?>
+                </a>
+            </h2>
+
+            <div class="course_item_subtitle">
+                <?php echo $this->formatDate($courseItem->getPublishedAt()) ?> |
+                <?php echo $this->escapeHtml($courseItem->getAuthor()) ?>
+            </div>
+
+            <?php if ($imageUrl = $this->getImageUrl($courseItem, 100)): ?>
+               <p><img src="<?php echo $imageUrl ?>" alt="<?php echo $this->escapeHtml($courseItem->getTitle()); ?>" /></p>
+            <?php endif; ?>
+        </div>
+    <?php endforeach; ?>
+</div>
+<?php echo $this->getPager() ?>
+<?php else: ?>
+    <div class="message info empty"><span><?php echo __('You have no Course.'); ?></span></div>
+<?php endif ?>

@@ -1,0 +1,30 @@
+<?php
+/**
+ * Course template for separate item
+ *
+ */
+
+/**
+ * @var $this LR\Course\Block\View
+ * @see LR\Course\Block\View
+ */
+?>
+<?php $_courseItem = $this->getCourse(); ?>
+    <div class="course_item_subtitle">
+        <?php echo $this->formatDate($_courseItem->getPublishedAt()) ?> |
+        <?php echo $this->escapeHtml($_courseItem->getAuthor()) ?>
+    </div>
+
+<div class="course_item_view">
+    <?php if ($imageUrl = $this->getImageUrl($_courseItem, 400)): ?>
+       <p><img src="<?php echo $imageUrl ?>" alt="<?php echo $this->escapeHtml($_courseItem->getTitle()) ?>" /></p>
+    <?php endif; ?>
+
+    <div class="course_item_content"><?php echo $_courseItem->getContent() ?></div>
+
+    <div class="pager">
+        <a href="<?php echo $this->getBackUrl() ?>">
+            <?php echo __('Return to list') ?>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="LR_Course::course" title="Course" module="LR_Course" sortOrder="30" resource="LR_Course::course"/>
+        <add id="LR_Course::course_manage" title="All Items" module="LR_Course" sortOrder="10" parent="LR_Course::course" action="course/index/" resource="LR_Course::manage"/>
+    </menu>
+</config>
